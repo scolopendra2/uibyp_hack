@@ -8,8 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def get_user_text(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
-        user_text = data['text']
+        # data = json.loads(request.body)
+        # user_text = data['text']
         return JsonResponse(
             {'message': 'Данные успешно получены и обработаны.'}
         )
@@ -18,5 +18,5 @@ def get_user_text(request):
 
 
 def home(request):
-    template = "homepage/home.html"
+    template = 'homepage/home.html'
     return render(request, template)
