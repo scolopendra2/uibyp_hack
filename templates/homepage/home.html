@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+{% block favicon %}<link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">{% endblock %}
+
+{% block content %}
+	<main class="main">
+		<section class="intro">
+			<div class="main__container container">
+				<form class="main__form" method="post">
+					<!-- <img class="main__gif-animation" src="./img/image_2023-11-17_17-31-23.png" alt=""> -->
+					<div class="input">
+						<input class="main__input" type="text" placeholder="Введите сообщение..." onclick="sendData()">
+						<button type="button" class="button" onclick="sendData()"><img
+								src="{% static 'img/arrow_right.svg'%}" alt=""></button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+{% endblock %}
+

@@ -1,0 +1,164 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*::before,*::after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea {font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400 ;}
+
+/* BASE BLOCKS */
+body {
+	font-family: 'Montserrat';
+	font-weight: 400;
+}
+.container {
+	max-width: 1280px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+a {
+	color: #000;
+	transition: 0.2s ease-in;
+}
+a:hover {
+	color: rgb(3, 152, 3);
+	transition: 0.2s ease-in;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+ .main {
+	flex: 1 1 auto;
+}
+.__btn {
+	background-color: rgb(6, 190, 6);
+	min-height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	transition: 0.2s ease-in;
+}
+.__btn > span {
+	font-size: 20px;
+	color: white;
+}
+.__btn:hover {
+	background-color: rgb(1, 165, 1);
+	transition: 0.2s ease-in;
+}
+
+/* ----HEADER------ */
+.header {
+	height: 140px;
+}
+.header__container {
+	height: 140px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo > a {
+	display: block;
+}
+.header__img {
+	object-fit: cover;
+	height: 40px;
+	width: 180px
+}
+.header__nav {
+}
+.header__items {
+	display: flex;
+	gap: 50px;
+
+}
+.header__item {
+	font-size: 20px;
+}
+.header__button {
+	width: 140px;
+}
+/* MAIN */
+.intro {
+	height: 50vh;
+	background-color: rgb(6, 190, 6);
+}
+.main__form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 100px;
+	position: relative;
+}
+
+.main__input {
+	height: 60px;
+	border-radius: 10px;
+	padding-left: 10px;
+	width: 100%;
+}
+.input {
+	width: 600px;
+	position: relative;
+}
+.button {
+	background-color: transparent;
+	position: absolute;
+	top: 30%;
+	right: 30px;
+}
+.button > img {
+	height: 25px;
+	width: 25px;
+	background-size: cover;
+}
+.main__input::placeholder {
+	font-size: 16px;
+}
+.gif-container {
+	max-width: 600px;
+	height: 600px;
+	overflow: hidden;
+}
+.main__gif-animation {
+	object-fit: cover;
+	height: 150px;
+	width: 150px;
+	margin-top: -70px;
+}
+
+
