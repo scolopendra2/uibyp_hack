@@ -14,7 +14,7 @@ function sendData() {
 
 	var data = { text: userInput };
 
-	fetch('/get_text/', {
+	fetch('/bot/questions/', {
 		method: 'post',
 		headers: {
 			'Content-Type': 'application/json',
