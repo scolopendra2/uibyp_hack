@@ -42,10 +42,17 @@ body {
 	font-family: 'Montserrat';
 	font-weight: 400;
 }
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
 .container {
 	max-width: 1280px;
 	padding: 0 15px;
 	margin: 0 auto;
+	box-sizing: border-box;
 } 
 /*  	 */
 .__btn {
@@ -56,20 +63,13 @@ body {
 	justify-content: center;
 	border-radius: 10px;
 	transition: 0.2s ease-in;
-}
-.__btn > a {
 	font-size: 20px;
 	color: white;
 }
+
 .__btn:hover {
 	background-color: #3f9239;
 	transition: 0.2s ease-in;
-}
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	overflow: hidden;
 }
 .main {
 	flex: 1 1 auto;
@@ -86,15 +86,11 @@ body {
 	align-items: center;
 }
 
-.header__logo > a {
-	display: block;
-}
+
 .header__img {
 	object-fit: cover;
 	height: 40px;
 	width: 180px
-}
-.header__nav {
 }
 .header__items {
 	display: flex;
@@ -110,7 +106,7 @@ body {
 }
 /* MAIN */
 .intro {
-	padding: 160px 0;
+	padding: 100px 0px;
 	background-color: #50b848;
 }
 .intro__title {
@@ -122,8 +118,8 @@ body {
 .intro__container {
 	height: 100%;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
 	justify-content: center;
 	gap: 100px;
 }
@@ -222,13 +218,56 @@ body {
 	background-size: cover;
 	object-fit: cover;
 }
-.popup {
-	display: none;
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #50b848;
-  z-index: 999;
+
+/* ---AUTH---- */
+
+.auth {
+	
+}
+.auth__container {
+	display: flex;
+	justify-content: center;
+}
+
+.auth__body {
+	margin: 150px 0;
+	width: 50%;
+	height: 450px;
+	background-color: #50b848;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 30px;
+}
+.body__title {
+	font-size: 32px;
+	color: white;
+	font-weight: 600;
+	margin: 80px 0 50px 0;
+}
+.body__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	width: 100%;
+}
+.input {
+	width: 70%;
+	height: 40px;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+.body__form-name {
+
+}
+.body__form-pass {
+}
+.body__form-button {
+	padding: 0 60px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: white;
+	font-size: 20px;
+	color: #909090;
 }

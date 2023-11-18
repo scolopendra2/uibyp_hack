@@ -3,5 +3,18 @@
 {% block title %}Вход{% endblock %}
 {% block favicon %}<link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">{% endblock %}
 {% block content %}
-  
+	<section class="auth">
+		<div class="auth__container container">
+			<div class="auth__body">
+				<h1 class="body__title">Вход</h1>
+				<form action="post" method="post" class="body__form">
+					<input type="text" class="body__form-name input" placeholder="Введите имя">
+					<input type="password" class="body__form-pass input" placeholder="Введите пароль">
+					<button type="submit" class="body__form-button">
+						Войти
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
 {% endblock %}
