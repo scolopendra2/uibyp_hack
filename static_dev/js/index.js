@@ -1,38 +1,35 @@
 function sendData() {
-	var userInput = document.querySelector('.intro__input-input').value;
-	var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+    var userInput = document.querySelector('.intro__input-input').value;
+    var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
 
-  const message = document.querySelector('intro__message');
+    var data = {text: userInput};
 
-	message.textContent = userInput
+    fetch('/bot/questions/', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken,
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Успешно отправлено:', data);
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        })
+    }
 
-	var data = {text: userInput};
-
-	fetch('/', {
-			method: 'post',
-			headers: {
-					'Content-Type': 'application/json',
-					'X-CSRFToken': csrfToken,
-			},
-			body: JSON.stringify(data),
-	})
-			.then(response => {
-					if (!response.ok) {
-							throw new Error('Network response was not ok');
-					}
-					return response.json();
-			})
-			.then(data => {
-					console.log('Успешно отправлено:', data);
-			})
-			.catch(error => {
-					console.error('Ошибка:', error);
-			})
-	}
-
-	const userInput = document.querySelector('.intro__input-input');
-  const message = document.querySelector('intro__message');
-
-	userInput.addEventListener('input', () => {
-    message.innerText = userInput.value;
-  });
+    function showResponse(event) {
+      event.preventDefault();
+      const userInput = document.querySelector('.intro__input-input').value;
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('response').style.display = 'block';
+      document.getElementById('userInputDisplay').innerText = userInput;
+    }

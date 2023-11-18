@@ -14,11 +14,41 @@ class Category(models.Model):
         return self.name
 
 
+class WorkerManager(models.Manager):
+    def get_id_for_question(self, category_name):
+        subquery = (
+            Question.objects.filter(
+                worker=models.OuterRef('pk'),
+                id_category__name=category_name,
+                status=False,
+            )
+            .annotate(unanswered_count=models.Count('id'))
+            .values('unanswered_count')[:1]
+        )
+
+        workers = (
+            self.get_queryset()
+            .filter(categories__name=category_name)
+            .annotate(
+                unanswered_count=models.Subquery(
+                    subquery, output_field=models.IntegerField()
+                )
+            )
+            .order_by('unanswered_count')
+        )
+
+        if workers.exists():
+            return workers.first().id
+        else:
+            return None
+
+
 class Worker(AbstractUser):
     login = models.TextField('имя сотрудника', max_length=50, null=False)
     categories = models.ManyToManyField(
         Category, related_name='workers_categories'
     )
+    username = models.TextField(null=True, unique=False)
 
     password = models.TextField(
         'пароль',
@@ -51,10 +81,10 @@ class Question(models.Model):
     question = models.TextField('вопрос', max_length=150, null=False)
     answer = models.TextField('ответ', max_length=150, null=False, default='')
     id_category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name='questions'
+        Category, on_delete=models.CASCADE, related_name='question'
     )
     id_worker = models.ForeignKey(
-        Worker, on_delete=models.CASCADE, related_name='questions'
+        Worker, on_delete=models.CASCADE, related_name='question'
     )
     status = models.BooleanField(
         'статус вопроса',

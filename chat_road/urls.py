@@ -7,7 +7,6 @@ app_name = 'chat_road'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
-    path('bot/', include('find_answer.urls')),
     path('', include('call_center.urls')),
 ]
 
