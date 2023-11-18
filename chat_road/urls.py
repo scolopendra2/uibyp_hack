@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('bot/', include('find_answer.urls')),
-    path('', include('call_center.urls'))
+    path('', include('call_center.urls')),
 ]
 
 if settings.DEBUG:
