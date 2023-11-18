@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'about.apps.AboutConfig',
     'find_answer.apps.FindAnswerConfig',
+    'call_center.apps.CallCenterConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

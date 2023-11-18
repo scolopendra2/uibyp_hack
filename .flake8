@@ -5,6 +5,7 @@ exclude =
     venv,
     models,
     __init__.py,
+    migrations
 
 import-order-style = google
 
