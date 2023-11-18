@@ -1,3 +1,21 @@
-<footer class="footer">
+{% load static %}
 
+<footer class="footer">
+	<div class="footer__container container">
+		<div class="footer__body">
+			<div class="footer__logo">
+				<a href="">
+					<img class="footer__img" src="{% static 'img/logo.png' %}" alt="">
+				</a>
+			</div>
+			<div class="footer__root"><copy>&copy; 2023 Все права защищены</div>
+			<div class="footer__contacts">
+				<h3 class="footer__connection">Связь с нами</h3>
+				<div class="connection__tg-wk">
+					<a href=""><img src="{% static 'img/tg.png' %}" alt="" class="connection__tg"></a>
+					<a href=""><img src="{% static 'img/wk.png' %}" alt="" class="connection__wk"></a>
+				</div>
+			</div>
+	</div>
+</div>	
 </footer>

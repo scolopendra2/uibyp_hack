@@ -11,11 +11,14 @@
         <title>{% block title %}Заголовок по умолчанию{% endblock %}</title>
     </head>
     <body>
+			<div class="wrapper">
         {% include "includes/header.html" %}
         <main>
             {% block content %}Контент не подвезли:({% endblock %}
         </main>
         {% include "includes/footer.html" %}
+			</div>
         <script src="{% static 'js/index.js' %}"></script>
+
     </body>
 </html>
