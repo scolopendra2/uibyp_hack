@@ -9,7 +9,9 @@
 
 
 function sendData() {
-	var userInput = document.querySelector('.main__input').value;
+	var userInput = document.querySelector('.intro__input-input').value;
+	var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+
 	var data = { text: userInput };
 
 	fetch('/get_text/', {
@@ -27,3 +29,5 @@ function sendData() {
 			console.error('Ошибка:', error);
 		});
 }
+
+
