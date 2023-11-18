@@ -2,11 +2,9 @@ import json
 from .find import get_res
 from .models import Questions
 from django.http import JsonResponse, Http404, HttpResponseBadRequest
-from django.views.decorators.csrf import csrf_exempt
 from .compile_models import text_important, text_category
 
 
-@csrf_exempt
 def get_questions(request):
     if request.method == 'POST':
         try:
@@ -23,7 +21,6 @@ def get_questions(request):
         raise Http404()
 
 
-@csrf_exempt
 def get_answer(request):
     if request.method == 'POST':
         try:
@@ -37,7 +34,6 @@ def get_answer(request):
         raise Http404()
 
 
-@csrf_exempt
 def add_task_to_moder(request):
     if request.method == 'POST':
         try:
