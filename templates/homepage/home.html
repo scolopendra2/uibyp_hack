@@ -10,10 +10,9 @@
 			<div class="intro__container container">
 				<h1 class="intro__title">Умный робот-помощник Савва </h1>
 				<form class="intro__form" method="post" action="/bot/questions/">
-					{% csrf_token %}
 					<div class="intro__input">
 						<img class="intro__img" src="{% static 'img/robot.png'%}" alt="">
-						<input class="intro__input-input" placeholder="Введите запрос..." type="text" onclick="sendData()">
+						<input class="intro__input-input" placeholder="Введите запрос..." type="text" onclick="sendData()"> {% csrf_token %}
 						<button type="submit" class="intro__button-button" onclick="sendData()"><img
 								src="{% static 'img/arrow_right.svg'%}" alt=""></button>
 					</div>
