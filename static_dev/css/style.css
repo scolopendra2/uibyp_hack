@@ -63,11 +63,10 @@ body {
 	justify-content: center;
 	border-radius: 10px;
 	transition: 0.2s ease-in;
-}
-.__btn > a {
 	font-size: 20px;
 	color: white;
 }
+
 .__btn:hover {
 	background-color: #3f9239;
 	transition: 0.2s ease-in;
@@ -87,9 +86,7 @@ body {
 	align-items: center;
 }
 
-.header__logo > a {
-	display: block;
-}
+
 .header__img {
 	object-fit: cover;
 	height: 40px;
@@ -109,7 +106,7 @@ body {
 }
 /* MAIN */
 .intro {
-	padding: 100 0px;
+	padding: 100px 0px;
 	background-color: #50b848;
 }
 .intro__title {
@@ -220,4 +217,57 @@ body {
 	height: 25px;
 	background-size: cover;
 	object-fit: cover;
+}
+
+/* ---AUTH---- */
+
+.auth {
+	
+}
+.auth__container {
+	display: flex;
+	justify-content: center;
+}
+
+.auth__body {
+	margin: 150px 0;
+	width: 50%;
+	height: 450px;
+	background-color: #50b848;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 30px;
+}
+.body__title {
+	font-size: 32px;
+	color: white;
+	font-weight: 600;
+	margin: 80px 0 50px 0;
+}
+.body__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	width: 100%;
+}
+.input {
+	width: 70%;
+	height: 40px;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+.body__form-name {
+
+}
+.body__form-pass {
+}
+.body__form-button {
+	padding: 0 60px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: white;
+	font-size: 20px;
+	color: #909090;
 }
