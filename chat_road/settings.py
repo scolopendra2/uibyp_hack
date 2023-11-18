@@ -27,7 +27,6 @@ ALLOW_REVERSE = ALLOW_REVERSE_ENV in ('true', 'yes', 'y', 't', '1', '', 'none')
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'about.apps.AboutConfig',
-    'find_answer.apps.FindAnswerConfig',
     'call_center.apps.CallCenterConfig',
     'django.contrib.admin',
     'django.contrib.auth',
