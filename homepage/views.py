@@ -1,5 +1,3 @@
-import json
-
 from django.http import JsonResponse, Http404
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt

@@ -52,18 +52,26 @@ async def fuzz_eq(text1, text2):
     similarity_ratio = fuzz.ratio(text1, text2)
     partial_similarity_ratio = fuzz.partial_ratio(text1, text2)
     token_sort_similarity_ratio = fuzz.token_sort_ratio(text1, text2)
-    return similarity_ratio + partial_similarity_ratio + token_sort_similarity_ratio
+    return (
+        similarity_ratio
+        + partial_similarity_ratio
+        + token_sort_similarity_ratio
+    )
 
 
 async def get_res(text, count):
-    df = pd.read_json("info.json").reset_index(drop=True)
+    df = pd.read_json('info.json').reset_index(drop=True)
     if count > len(df['question'].values.tolist()):
-        raise ValueError("count is greater than len(df['question'])")
+        raise ValueError('count is greater than len(df["question"])')
 
     all_val = []
     for i in df['question']:
-        all_val.append(await jaccard_similarity(i, text) + await semantic_eq(i, text) +
-                       await consul_eq(i, text) + await fuzz_eq(i, text))
+        all_val.append(
+            await jaccard_similarity(i, text)
+            + await semantic_eq(i, text)
+            + await consul_eq(i, text)
+            + await fuzz_eq(i, text)
+        )
 
     answer = []
     for i in range(count):
@@ -74,12 +82,12 @@ async def get_res(text, count):
 
 
 async def main():
-    text = "Цена"
+    text = 'Цена'
     count = 3
     result = await get_res(text, count)
     print(result)
 
+
 # Запуск асинхронного кода
 asyncio.run(main())
 print(time.time() - tm)
-
