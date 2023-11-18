@@ -1,0 +1,236 @@
+[
+{
+  "model": "call_center.category",
+  "pk": 29,
+  "fields": {
+    "name": "change_order"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 30,
+  "fields": {
+    "name": "delete_account"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 31,
+  "fields": {
+    "name": "get_invoice"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 32,
+  "fields": {
+    "name": "track_order"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 33,
+  "fields": {
+    "name": "set_up_shipping_address"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 34,
+  "fields": {
+    "name": "payment_issue"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 35,
+  "fields": {
+    "name": "switch_account"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 36,
+  "fields": {
+    "name": "delivery_period"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 37,
+  "fields": {
+    "name": "create_account"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 38,
+  "fields": {
+    "name": "complaint"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 39,
+  "fields": {
+    "name": "contact_customer_service"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 40,
+  "fields": {
+    "name": "get_refund"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 41,
+  "fields": {
+    "name": "recover_password"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 42,
+  "fields": {
+    "name": "delivery_options"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 43,
+  "fields": {
+    "name": "contact_human_agent"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 44,
+  "fields": {
+    "name": "check_invoice"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 45,
+  "fields": {
+    "name": "check_refund_policy"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 46,
+  "fields": {
+    "name": "check_invoices"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 47,
+  "fields": {
+    "name": "newsletter_subscription"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 48,
+  "fields": {
+    "name": "edit_account"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 49,
+  "fields": {
+    "name": "check_cancellation_fee"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 50,
+  "fields": {
+    "name": "check_payment_methods"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 51,
+  "fields": {
+    "name": "track_refund"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 52,
+  "fields": {
+    "name": "review"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 53,
+  "fields": {
+    "name": "change_shipping_address"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 54,
+  "fields": {
+    "name": "registration_problems"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 55,
+  "fields": {
+    "name": "place_order"
+  }
+},
+{
+  "model": "call_center.category",
+  "pk": 56,
+  "fields": {
+    "name": "cancel_order"
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 3,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "username": "",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T16:06:37.709Z",
+    "login": "Roma",
+    "password": "Roma0108",
+    "categories": [
+      31,
+      32,
+      34,
+      36,
+      37,
+      39,
+      40,
+      41,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      54
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

@@ -7,13 +7,16 @@
 		<div class="auth__container container">
 			<div class="auth__body">
 				<h1 class="body__title">Вход</h1>
-				<form action="" method="post" class="body__form">
-					<input type="text" class="body__form-name input" placeholder="Введите имя">
-					<input type="password" class="body__form-pass input" placeholder="Введите пароль">
+				<form action="{% url 'call_center:auth_check' %}" method="post" class="body__form">
+					{% csrf_token %}
+					{% if error_message %}
+						<p style="color: red;">{{ error_message }}</p>
+					{% endif %}
+					<input type="text" name="input_login" class="body__form-name input" placeholder="Введите имя">
+    				<input type="password" name="input_password" class="body__form-pass input" placeholder="Введите пароль">
 					<button type="submit" class="body__form-button">
 						Войти
 					</button>
-				</form>
 			</div>
 		</div>
 	</section>
