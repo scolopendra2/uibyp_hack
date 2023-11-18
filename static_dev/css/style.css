@@ -173,10 +173,14 @@ body {
 	font-size: 18px;
 	color: #6c6c6c;
 }
+.intro__message {
+	height: 200px;
+	width: 200px;
+	background-color: red;
+}
 /* ----FOOTER------ */
 .footer {
 	height: 100px;
-	border-top: 2px solid rgb(165, 165, 165);
 }
 
 .footer__body {
