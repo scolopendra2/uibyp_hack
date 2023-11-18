@@ -4,14 +4,14 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.TextField('название', max_length=30, null=False, unique=True)
+    name = models.TextField('название', max_length=70, null=False, unique=True)
 
     class Meta:
         verbose_name = 'категорию'
         verbose_name_plural = 'категории'
 
     def __str__(self):
-        return self.name[:15]
+        return self.name
 
 
 class Worker(AbstractUser):
