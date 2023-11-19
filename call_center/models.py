@@ -2,6 +2,8 @@ import django.core
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 
+from homepage.models import User
+
 
 class Category(models.Model):
     name = models.TextField('название', max_length=70, null=False, unique=True)
@@ -12,35 +14,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class WorkerManager(models.Manager):
-    def get_id_for_question(self, category_name):
-        subquery = (
-            Question.objects.filter(
-                worker=models.OuterRef('pk'),
-                id_category__name=category_name,
-                status=False,
-            )
-            .annotate(unanswered_count=models.Count('id'))
-            .values('unanswered_count')[:1]
-        )
-
-        workers = (
-            self.get_queryset()
-            .filter(categories__name=category_name)
-            .annotate(
-                unanswered_count=models.Subquery(
-                    subquery, output_field=models.IntegerField()
-                )
-            )
-            .order_by('unanswered_count')
-        )
-
-        if workers.exists():
-            return workers.first().id
-        else:
-            return None
 
 
 class Worker(AbstractUser):
@@ -86,16 +59,34 @@ class Question(models.Model):
     id_worker = models.ForeignKey(
         Worker, on_delete=models.CASCADE, related_name='question'
     )
+    id_user = models.TextField(null=True)
     status = models.BooleanField(
         'статус вопроса',
         default=False,
         help_text='Текущий статус вопроса',
+    )
+    important = models.IntegerField(
+        'важность вопроса',
+        validators=[
+            django.core.validators.MinValueValidator(1),
+            django.core.validators.MaxValueValidator(3),
+        ],
     )
     date = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'вопрос'
         verbose_name_plural = 'вопросы'
+
+    def get_id_for_question(self, category_name):
+        workers = Worker.objects.filter(categories__name=category_name).only('id').all()
+        min_tasks = workers.first()
+        for worker in workers:
+            questions = Question.objects.filter(id_worker=worker.id, status=False).only('id').all()
+            questions_min = Question.objects.filter(id_worker=min_tasks.id, status=False).only('id').all()
+            if len(questions_min) > len(questions):
+                min_tasks = worker
+        return min_tasks
 
     def __str__(self):
         return self.question[:15]

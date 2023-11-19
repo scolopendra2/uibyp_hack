@@ -3,8 +3,7 @@ function sendData() {
     var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
 
     var data = {text: userInput};
-
-    fetch('/bot/questions/', {
+    fetch('post_question/', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
@@ -12,18 +11,6 @@ function sendData() {
         },
         body: JSON.stringify(data),
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Успешно отправлено:', data);
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
-        })
     }
 
     function showResponse(event) {
