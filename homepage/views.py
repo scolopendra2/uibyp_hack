@@ -1,7 +1,6 @@
 import json
 
-from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from call_center.models import Question, Category
 from components.compile_models import text_important, text_category
@@ -11,7 +10,7 @@ from . import models
 def home(request):
     template = 'homepage/home.html'
     user_session_id = request.session.get('user_session_id', None)
-    questions = Question.objects.filter(id_user=user_session_id)
+    questions = Question.objects.filter(id_user=user_session_id).all()
     context = {
         'questions': questions,
     }
@@ -39,7 +38,7 @@ def post_question(request):
         question.id_worker = question.get_id_for_question(task_category)
         question.important = task_important
         question.save()
-        return JsonResponse({'success': 'true'})
+        return redirect('/')
 
 
 def auth(request):

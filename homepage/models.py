@@ -12,3 +12,6 @@ def generate_user_id():
 
 class User(models.Model):
     user_id = models.TextField(default=generate_user_id())
+    this_worker = models.BooleanField(default=False)
+
+

@@ -1,8 +1,9 @@
 from django.http import HttpResponseNotFound
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
 
 from . import models
+from homepage.models import User
 
 
 @csrf_protect
@@ -12,14 +13,33 @@ def auth_check(request):
     if request.method == 'POST':
         username = request.POST.get('input_login')
         password = request.POST.get('input_password')
-        user = models.Worker.objects.filter(
+        worker = models.Worker.objects.filter(
             login=username, password=password
         ).first()
-
-        if user is not None:
-            return render(request, 'call_center/worker_card.html')
+        user_session_id = request.session.get('user_session_id', None)
+        if not user_session_id:
+            user = models.User()
+            request.session['user_session_id'] = user.user_id
+            user_session_id = user.user_id
+            user.save()
+        user = User.objects.filter(user_id=user_session_id).first()
+        user.this_worker = True
+        user.save()
+        if worker is not None:
+            return redirect('/auth/success')
         else:
             error_message = 'Неверный логин или пароль'
             return render(request, template, {'error_message': error_message})
     else:
         return HttpResponseNotFound()
+
+
+def success(request):
+    user_session_id = request.session.get('user_session_id', None)
+    user = User.objects.filter(user_id=user_session_id).first()
+    if user is not None and user.this_worker:
+        template = 'call_center/worker_card.html'
+        return render(request, template)
+    else:
+        error_message = 'Неверный логин или пароль'
+        return render(request, 'homepage/auth.html', {'error_message': error_message})
