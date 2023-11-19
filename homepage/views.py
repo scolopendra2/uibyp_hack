@@ -39,9 +39,7 @@ def post_question(request):
         question.id_worker = question.get_id_for_question(task_category)
         question.important = task_important
         question.save()
-        return JsonResponse(
-            {'questions': f'as'}
-        )
+        return JsonResponse({'success': 'true'})
 
 
 def auth(request):

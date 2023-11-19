@@ -2,8 +2,6 @@ import django.core
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 
-from homepage.models import User
-
 
 class Category(models.Model):
     name = models.TextField('название', max_length=70, null=False, unique=True)
@@ -79,11 +77,23 @@ class Question(models.Model):
         verbose_name_plural = 'вопросы'
 
     def get_id_for_question(self, category_name):
-        workers = Worker.objects.filter(categories__name=category_name).only('id').all()
+        workers = (
+            Worker.objects.filter(categories__name=category_name)
+            .only('id')
+            .all()
+        )
         min_tasks = workers.first()
         for worker in workers:
-            questions = Question.objects.filter(id_worker=worker.id, status=False).only('id').all()
-            questions_min = Question.objects.filter(id_worker=min_tasks.id, status=False).only('id').all()
+            questions = (
+                Question.objects.filter(id_worker=worker.id, status=False)
+                .only('id')
+                .all()
+            )
+            questions_min = (
+                Question.objects.filter(id_worker=min_tasks.id, status=False)
+                .only('id')
+                .all()
+            )
             if len(questions_min) > len(questions):
                 min_tasks = worker
         return min_tasks
