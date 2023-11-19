@@ -42,4 +42,6 @@ def success(request):
         return render(request, template)
     else:
         error_message = 'Неверный логин или пароль'
-        return render(request, 'homepage/auth.html', {'error_message': error_message})
+        return render(
+            request, 'homepage/auth.html', {'error_message': error_message}
+        )
