@@ -50,7 +50,7 @@ class Worker(AbstractUser):
 
 class Question(models.Model):
     question = models.TextField('вопрос', max_length=150, null=False)
-    answer = models.TextField('ответ', max_length=150, null=False, default='')
+    answer = models.TextField('ответ', max_length=250)
     id_category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name='question'
     )
@@ -73,6 +73,7 @@ class Question(models.Model):
     date = models.DateTimeField(auto_now=True)
 
     class Meta:
+        ordering = ['-important', ]
         verbose_name = 'вопрос'
         verbose_name_plural = 'вопросы'
 
@@ -99,12 +100,12 @@ class Question(models.Model):
         return min_tasks
 
     def __str__(self):
-        return self.question[:15]
+        return self.question
 
 
 class Mark(models.Model):
     id_question = models.ForeignKey(
-        Question, on_delete=models.CASCADE, related_name='marks'
+        Question, on_delete=models.CASCADE, related_name='mark'
     )
     mark = models.IntegerField(
         'оценка',

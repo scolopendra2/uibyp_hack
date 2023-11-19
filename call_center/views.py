@@ -1,9 +1,11 @@
-from django.http import HttpResponseNotFound
+import json
+
+from django.http import HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
 
-from . import models
 from homepage.models import User
+from . import models
 
 
 @csrf_protect
@@ -45,9 +47,18 @@ def success(request):
         worker = models.Worker.objects.filter(
             login=login, password=password
         ).first()
+        categories = [category.name for category in worker.categories.all()]
+        questions_no_answer = models.Question.objects.filter(id_worker=worker.id,
+                                                             status=False).all()
+
+        questions_yes_answer = models.Question.objects.filter(id_worker=worker.id,
+                                                              status=True).all()
         context = {
             'exit': True,
-            'worker': worker
+            'categories': ', '.join(categories),
+            'name': worker.login,
+            'questions_no_answer': questions_no_answer,
+            'questions_yes_answer': questions_yes_answer
         }
         return render(request, template, context=context)
     else:
@@ -55,3 +66,15 @@ def success(request):
         return render(
             request, 'homepage/auth.html', {'error_message': error_message}
         )
+
+
+def answer_post(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        answer = data['answer']
+        id_question = int(data['id'].split(':')[1])
+        question = models.Question.objects.filter(id=id_question).first()
+        question.answer = answer
+        question.status = True
+        question.save()
+        return redirect('call_center:auth_success')

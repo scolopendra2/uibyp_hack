@@ -2,32 +2,52 @@
 {% load static %}
 
 {% block title %}Главная{% endblock %}
-{% block favicon %}<link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">{% endblock %}
+{% block favicon %}
+<link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">{% endblock %}
 
 {% block content %}
-	<main class="main">
-		<section class="intro">
-			<div class="intro__container container">
-				<h1 class="intro__title">Умный робот-помощник Савва </h1>
-				<form class="intro__form" method="post" action="/">
-					{% csrf_token %}
-					<div class="intro__input">
-						<img class="intro__img" src="{% static 'img/robot.png'%}" alt="">
-						<input class="intro__input-input" placeholder="Введите запрос..." type="text"> {% csrf_token %}
-						<button type="submit" class="intro__button-button" onclick="sendData()"><img
-								src="{% static 'img/arrow_right.svg'%}" alt=""></button>
-					</div>
-				</form>
-				<div class="intro__message">
+<main class="main">
+    <section class="intro">
+        <div class="intro__container container">
+            <h1 class="intro__title">Умный робот-помощник Савва </h1>
+            <form class="intro__form" method="post">
+                {% csrf_token %}
+                <div class="intro__input">
+                    <img class="intro__img" src="{% static 'img/robot.png'%}" alt="">
+                    <input class="intro__input-input" placeholder="Введите запрос..." type="text"> {% csrf_token %}
+                    <button type="submit" class="intro__button-button" onclick="sendData()"><img
+                            src="{% static 'img/arrow_right.svg'%}" alt=""></button>
+                </div>
 
-				</div>
-			</div>
-		</section>
-		<div class="overlay" id="overlay">
-		  <div class="response" id="response">
-			<span id="userInputDisplay"></span>
-		  </div>
-		</div>
-	  </main>
+            </form>
+
+        </div>
+    </section>
+    <section class="answer">
+        <div class="answer__container container">
+            <div class="profil__items2">
+                        {% for question in questions %}
+                        <div class="profil__item true">
+
+                            <div class="item__body-title">
+                                <h3 class="body-title__title title__true"><p id="question"> {{ question.question }}</p></h3>
+                            </div>
+                            <div class="item__id">ID:{{ question.id }}</div>
+                            <div class="item__answer-grade">
+                                <div class="item__answer">
+                                    {% if question.answer == ''%}
+                                        Ответа на ваш вопрос ещё нет
+                                    {% else %}
+                                        {{ question.answer }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+            </div>
+    </section>
+</main>
 {% endblock %}
 

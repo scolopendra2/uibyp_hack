@@ -2,7 +2,7 @@ import json
 
 from django.shortcuts import render, redirect
 
-from call_center.models import Question, Category
+from call_center.models import Question, Category, Mark
 from components.compile_models import text_important, text_category
 from . import models
 
@@ -44,3 +44,16 @@ def post_question(request):
 def auth(request):
     template = 'homepage/auth.html'
     return render(request, template)
+
+
+def raiting(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        question_id = int(data['id'].split(':')[1])
+        rait = data['rating']
+        mark = Mark()
+        mark.id_question = Question.objects.filter(id=question_id).first()
+        print(rait)
+        mark.mark = rait
+        mark.save()
+        return redirect('/')

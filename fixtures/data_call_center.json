@@ -197,28 +197,34 @@
 },
 {
   "model": "call_center.worker",
-  "pk": 3,
+  "pk": 25,
   "fields": {
     "last_login": null,
     "is_superuser": false,
-    "username": "",
     "first_name": "",
     "last_name": "",
     "email": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2023-11-18T16:06:37.709Z",
-    "login": "Roma",
-    "password": "Roma0108",
+    "date_joined": "2023-11-18T22:29:35.342Z",
+    "login": "Joshua Mummert",
+    "username": null,
+    "password": "Centr0000",
     "categories": [
+      29,
+      30,
       31,
       32,
+      33,
       34,
+      35,
       36,
       37,
+      38,
       39,
       40,
       41,
+      42,
       43,
       44,
       45,
@@ -227,10 +233,737 @@
       48,
       49,
       50,
-      54
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
     ],
     "groups": [],
     "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 26,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.471Z",
+    "login": "Allan Pearson",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 27,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.578Z",
+    "login": "Victoria Butler",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 28,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.677Z",
+    "login": "Charmaine Roach",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 29,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.753Z",
+    "login": "Harold Manalang",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 30,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.826Z",
+    "login": "Valeria Sanders",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      34,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      52
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 31,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.877Z",
+    "login": "Lissa Johnson",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      34,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      52
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 32,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.926Z",
+    "login": "Loretta Humphries",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      34,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      52
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 33,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:35.976Z",
+    "login": "Leo Garrett",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      34,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      52
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 34,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.039Z",
+    "login": "Geraldine Montoya",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      29,
+      30,
+      31,
+      32,
+      34,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      52
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 35,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.102Z",
+    "login": "Noemi Dye",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 36,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.126Z",
+    "login": "Mary Parker",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 37,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.150Z",
+    "login": "James Kemp",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 38,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.171Z",
+    "login": "Gladys Sutton",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 39,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.196Z",
+    "login": "David Briggs",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 40,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.220Z",
+    "login": "Jessica Gajewski",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 41,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.245Z",
+    "login": "Grace Dinardo",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 42,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.267Z",
+    "login": "Charles Hulslander",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 43,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.290Z",
+    "login": "Amy Manning",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.worker",
+  "pk": 44,
+  "fields": {
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T22:29:36.313Z",
+    "login": "Pat Miles",
+    "username": null,
+    "password": "Centr0000",
+    "categories": [
+      31,
+      32,
+      34,
+      37,
+      39
+    ],
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "call_center.question",
+  "pk": 27,
+  "fields": {
+    "question": "ask an agent where to notify fucking problems paying, please",
+    "answer": "''",
+    "id_category": 34,
+    "id_worker": 25,
+    "id_user": "6deTp4jhBQUm9YrX",
+    "status": true,
+    "important": 2,
+    "date": "2023-11-19T11:45:40.148Z"
+  }
+},
+{
+  "model": "call_center.question",
+  "pk": 28,
+  "fields": {
+    "question": "i bought a product, could I modify my fucking purchase?",
+    "answer": "''",
+    "id_category": 29,
+    "id_worker": 25,
+    "id_user": "6deTp4jhBQUm9YrX",
+    "status": true,
+    "important": 3,
+    "date": "2023-11-19T11:45:28.328Z"
+  }
+},
+{
+  "model": "call_center.question",
+  "pk": 31,
+  "fields": {
+    "question": "Заявка сотруднику",
+    "answer": "",
+    "id_category": 37,
+    "id_worker": 25,
+    "id_user": "6deTp4jhBQUm9YrX",
+    "status": false,
+    "important": 2,
+    "date": "2023-11-19T11:46:00.701Z"
+  }
+},
+{
+  "model": "call_center.mark",
+  "pk": 1,
+  "fields": {
+    "id_question": 28,
+    "mark": 0
+  }
+},
+{
+  "model": "call_center.mark",
+  "pk": 2,
+  "fields": {
+    "id_question": 28,
+    "mark": 0
+  }
+},
+{
+  "model": "call_center.mark",
+  "pk": 3,
+  "fields": {
+    "id_question": 28,
+    "mark": 0
+  }
+},
+{
+  "model": "call_center.mark",
+  "pk": 4,
+  "fields": {
+    "id_question": 28,
+    "mark": 0
+  }
+},
+{
+  "model": "call_center.mark",
+  "pk": 5,
+  "fields": {
+    "id_question": 28,
+    "mark": 0
+  }
+},
+{
+  "model": "call_center.mark",
+  "pk": 6,
+  "fields": {
+    "id_question": 28,
+    "mark": 0
+  }
+},
+{
+  "model": "call_center.mark",
+  "pk": 7,
+  "fields": {
+    "id_question": 28,
+    "mark": 0
   }
 }
 ]
