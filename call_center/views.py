@@ -18,7 +18,7 @@ def auth_check(request):
         ).first()
         user_session_id = request.session.get('user_session_id', None)
         if not user_session_id:
-            user = models.User()
+            user = User()
             request.session['user_session_id'] = user.user_id
             user_session_id = user.user_id
             user.save()
