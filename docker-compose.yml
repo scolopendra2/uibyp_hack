@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  django:
+    build: .
+    container_name: django
+    image: gusgus153/iubip_django
+    ports:
+      - 8000:8000
+    volumes:
+      - django:/django/volumes
+
+
+volumes:
+  django:
