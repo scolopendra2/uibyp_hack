@@ -24,6 +24,8 @@ def auth_check(request):
             user.save()
         user = User.objects.filter(user_id=user_session_id).first()
         user.this_worker = True
+        user.worker_login = username
+        user.worker_password = password
         user.save()
         if worker is not None:
             return redirect('/auth/success')
@@ -39,8 +41,13 @@ def success(request):
     user = User.objects.filter(user_id=user_session_id).first()
     if user is not None and user.this_worker:
         template = 'call_center/worker_card.html'
+        login, password = user.worker_login, user.worker_password
+        worker = models.Worker.objects.filter(
+            login=login, password=password
+        ).first()
         context = {
-            'exit': True
+            'exit': True,
+            'worker': worker
         }
         return render(request, template, context=context)
     else:
