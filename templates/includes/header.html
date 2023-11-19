@@ -7,8 +7,14 @@
 						<img class="header__img" src="{% static 'img/logo.png' %}" alt="">
 					</a>
 				</div>
-				<a class="header__button __btn" href="/auth">
-					Вход
-				</a>
+				{% if exit %}
+					<a class="header__button __btn" href="/">
+						Выход
+					</a>
+				{% else %}
+					<a class="header__button __btn" href="/auth">
+						Вход
+					</a>
+				{% endif %}
 			</div>
 		</header>

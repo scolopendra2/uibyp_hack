@@ -39,7 +39,10 @@ def success(request):
     user = User.objects.filter(user_id=user_session_id).first()
     if user is not None and user.this_worker:
         template = 'call_center/worker_card.html'
-        return render(request, template)
+        context = {
+            'exit': True
+        }
+        return render(request, template, context=context)
     else:
         error_message = 'Неверный логин или пароль'
         return render(
